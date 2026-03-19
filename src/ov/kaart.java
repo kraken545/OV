@@ -2,46 +2,62 @@ package ov;
 
 public class kaart
 {
-    private double saldo = 10.0;
-    private boolean geldig = true;
-    private String nummer = "724659826735";
-    private boolean ingechecked = false;
+    private double saldo;
+    private boolean geldig;
+    private String nummer;
+    private boolean ingechecked;
 
 
-    public void addSaldo(double saldo)
+//    paal paal01 = new paal();
+
+    public double getSaldo()
     {
-        System.out.println("oude saldo: "+ this.saldo);
-        saldo = this.saldo + saldo;
-        System.out.println("nieuwe saldo: "+ saldo);
+
+        saldo = this.saldo;
+        return saldo;
 
     }
 
+    public void setSaldo(double saldo)
+    {
+        this.saldo = saldo;
+    }
 
 
     public String getNummer()
     {
-        return nummer;
+        String kaartnummer = this.nummer;
+        return kaartnummer;
     }
 
-    public void nietMeerGeldig()
+    public void setKaartnummer(String x)
     {
-        this.geldig = false;
+        this.nummer = x;
     }
 
     public boolean getGeldig()
     {
+        geldig = this.geldig;
         return geldig;
     }
 
-    public void inchecked()
+    public void setGelding(boolean x)
     {
-        this.ingechecked = true;
-        System.out.println("Welcome je bent ingecheckd");
+        this.geldig = x;
     }
 
-    public void uitchecken()
+    public boolean getIngechecked()
     {
-        System.out.println("Fijne dag verder, hoop u nooit meer te zien ;)");
-        this.ingechecked = false;
+
+        return this.ingechecked;
+    }
+
+    public void setIngechecked(boolean status)
+    {
+        this.ingechecked = status;
     }
 }
+
+
+
+

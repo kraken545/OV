@@ -8,49 +8,65 @@ public class main
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
+        paal verwerkt = new paal();
         kaart kaart01 = new kaart();
-        paal paal01 = new paal();
+        ladpaal ladpal = new ladpaal();
+
+        double saldo;
+        boolean ingechecked;
+        String nummer;
+        boolean geldig;
+
         int keuze = 0;
 
+        System.out.println("kaart_saldo?!/n");
+        saldo = input.nextDouble();
+        System.out.println("kaart_is_ingecheked?!/n");
+        ingechecked = input.nextBoolean();
+        System.out.println("kaart_nummer?/n");
+        nummer = input.next();
+        System.out.println("kaart_is_geldig?/n");
+        geldig = input.nextBoolean();
+        verwerkt.readKaart(kaart01, saldo, ingechecked, nummer, geldig);
 
-        while (keuze != 4)
 
+        while (keuze != 5)
 
         {
-            System.out.println("Selecterd een van de volgende opties:");
-            System.out.println("1. saldo toevoegen");
-            System.out.println("2. Inchecken");
-            System.out.println("3. Uitchecken");
-            System.out.println("4. EXIT");
+
+            verwerkt.showOptions();
             keuze = input.nextInt();
-
-
-
 
 
             switch (keuze)
             {
                 case 1:
                     System.out.println("hoeveel euro wilt u toevegen");
-                    kaart01.addSaldo(input.nextDouble());
+                    ladpal.addSaldo(kaart01, input.nextDouble());
                     break;
+
                 case 2:
-                    kaart01.inchecked();
+                    System.out.println("huidig saldo: €" + kaart01.getSaldo());
+
                     break;
+
+
                 case 3:
+                    verwerkt.incheken(kaart01);
+                    break;
+                case 4:
 
-                    kaart01.uitchecken();
+                    verwerkt.uitchecken(kaart01);
                     break;
 
-                case 4:
+
+                case 5:
+                    System.out.println("Fijne dag verder ;)");
                     break;
 
 
             }
         }
-
-
-
 
 
     }
