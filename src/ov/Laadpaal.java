@@ -1,8 +1,8 @@
 package ov;
 
-public class ladpaal
+public class Laadpaal
 {
-    public void addSaldo(kaart kaart, double saldo)
+    public void addSaldo(Kaart kaart, double saldo)
     {
         double saldoOud = kaart.getSaldo();
         saldoOud = saldoOud + saldo;

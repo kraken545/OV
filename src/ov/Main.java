@@ -3,31 +3,21 @@ package ov;
 import java.util.Scanner;
 
 
-public class main
+public class Main
 {
     public static void main(String[] args)
     {
         Scanner input = new Scanner(System.in);
-        paal verwerkt = new paal();
-        kaart kaart01 = new kaart();
-        ladpaal ladpal = new ladpaal();
+        Paal verwerkt = new Paal();
+        Kaart kaart01 = new Kaart();
+        Laadpaal laadpaal = new Laadpaal();
+        Vervoer_type vervoer = new Vervoer_type();
 
-        double saldo;
-        boolean ingechecked;
-        String nummer;
-        boolean geldig;
 
         int keuze = 0;
 
-        System.out.println("kaart_saldo?!/n");
-        saldo = input.nextDouble();
-        System.out.println("kaart_is_ingecheked?!/n");
-        ingechecked = input.nextBoolean();
-        System.out.println("kaart_nummer?/n");
-        nummer = input.next();
-        System.out.println("kaart_is_geldig?/n");
-        geldig = input.nextBoolean();
-        verwerkt.readKaart(kaart01, saldo, ingechecked, nummer, geldig);
+
+//      verwerkt.readKaart(kaart01, input.nextDouble(), input.next(), input.nextBoolean(), input.nextBoolean());
 
 
         while (keuze != 5)
@@ -42,7 +32,7 @@ public class main
             {
                 case 1:
                     System.out.println("hoeveel euro wilt u toevegen");
-                    ladpal.addSaldo(kaart01, input.nextDouble());
+                    laadpaal.addSaldo(kaart01, input.nextDouble());
                     break;
 
                 case 2:
@@ -52,6 +42,8 @@ public class main
 
 
                 case 3:
+                    vervoer.showStations();
+                    vervoer.getchoose(input.nextInt());
                     verwerkt.incheken(kaart01);
                     break;
                 case 4:

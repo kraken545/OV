@@ -1,6 +1,6 @@
 package ov;
 
-public class kaart
+public class Kaart
 {
     private double saldo;
     private boolean geldig;
@@ -8,12 +8,17 @@ public class kaart
     private boolean ingechecked;
 
 
-//    paal paal01 = new paal();
+    public Kaart()
+    {
+        saldo =0;
+        geldig = true;
+    }
+
 
     public double getSaldo()
     {
 
-        saldo = this.saldo;
+
         return saldo;
 
     }
@@ -26,18 +31,18 @@ public class kaart
 
     public String getNummer()
     {
-        String kaartnummer = this.nummer;
-        return kaartnummer;
+
+        return nummer;
     }
 
-    public void setKaartnummer(String x)
+    public void setKaartnummer(String nummer)
     {
-        this.nummer = x;
+        this.nummer = nummer;
     }
 
     public boolean getGeldig()
     {
-        geldig = this.geldig;
+
         return geldig;
     }
 
