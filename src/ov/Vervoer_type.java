@@ -10,19 +10,28 @@ public class Vervoer_type
     double bedrag;
     String destination;
 
-    public void showStations()
+    public void showStations(Kaart kaart)
     {
-
-        System.out.println("\n ==== Your'e Current Location is Nijmegen! ==== \n");
-        int x = 0;
-        while (x < stations.length)
+        if (!kaart.getIngechecked())
         {
-            int a = x + 1;
-            System.out.println(a + ". " + stations[x]);
 
-            x++;
+            System.out.println("\n ==== Your'e Current Location is Nijmegen! ==== \n");
+            int x = 0;
+            while (x < stations.length)
+            {
+                int a = x + 1;
+                System.out.println(a + ". " + stations[x]);
+
+                x++;
+            }
+            System.out.println("\n== Waar moet je heen!? ==\n");
         }
-        System.out.println("\n== Waar moet je heen ==!?\n");
+        else
+        {
+            System.out.println("u bent al ingecheked :|");
+            return;
+        }
+        return;
     }
 
     public void getchoose(int stationeind)
@@ -73,7 +82,6 @@ public class Vervoer_type
         }
         return bedrag;
     }
-
 
 
     public double getBus()

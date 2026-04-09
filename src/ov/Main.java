@@ -42,7 +42,7 @@ public class Main
 
 
                 case 3:
-                    vervoer.showStations();
+                    vervoer.showStations(kaart01);
                     vervoer.getchoose(input.nextInt());
                     verwerkt.incheken(kaart01);
                     break;
