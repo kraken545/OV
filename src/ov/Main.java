@@ -18,7 +18,7 @@ public class Main
 
 
 //      verwerkt.readKaart(kaart01, input.nextDouble(), input.next(), input.nextBoolean(), input.nextBoolean());
-
+        laadpaal.showKaart(kaart01);
 
         while (keuze != 5)
 
@@ -44,11 +44,13 @@ public class Main
                 case 3:
                     vervoer.showStations(kaart01);
                     vervoer.getchoose(input.nextInt());
+                    vervoer.getStation(kaart01);
                     verwerkt.incheken(kaart01);
                     break;
                 case 4:
 
                     verwerkt.uitchecken(kaart01);
+
                     break;
 
 

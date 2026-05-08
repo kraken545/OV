@@ -1,11 +1,10 @@
 package ov;
 
-import java.util.Scanner;
 
 public class Paal
 {
     private double instaptarief = 10.0;
-    Scanner input = new Scanner(System.in);
+
 
     public void showOptions()
     {
@@ -38,6 +37,10 @@ public class Paal
             System.out.println("Je bent al ingechecked!");
             return;
         }
+        else if (kaart.getSaldo() < 10)
+        {
+            return;
+        }
         else
         {
             saldo = saldo - this.instaptarief;
@@ -50,18 +53,25 @@ public class Paal
     public void uitchecken(Kaart kaart)
 
     {
-        if (kaart.getIngechecked() == false)
+        if (!kaart.getIngechecked())
         {
             System.out.println("u bent al uitgecheked :|, gebruik onze vervoermiddelen nooit meer aub! ");
         }
         else
         {
             double saldo = kaart.getSaldo();
+            double bedrag = kaart.getBedrag();
+            saldo = saldo + instaptarief - bedrag;
 
-            saldo = saldo + instaptarief;
             System.out.println("Fijne dag verder, hoop u nooit meer te zien ;)");
             kaart.setIngechecked(false);
             kaart.setSaldo(saldo);
+            double bekijk = kaart.getSaldo();
+            int nummer = kaart.getNummer();
+            System.out.println("\nWelcome again!");
+            System.out.println("\nreiskosten: € " + bedrag);
+            System.out.println("\nKaart-Nummer: " + nummer);
+            System.out.println("huidig saldo: € " + bekijk + "\n");
 
         }
     }
@@ -75,19 +85,19 @@ public class Paal
 //        return;
 //    }
 
-    public void readKaart(Kaart kaart, double saldo, String nummer, boolean ingechecked, boolean geldig)
-    {
-        System.out.println("kaart_saldo?!");
-        kaart.setSaldo(saldo);
-        System.out.println("kaart_is_ingecheked?!");
-        kaart.setIngechecked(ingechecked);
-        System.out.println("kaart_nummer?");
-        kaart.setKaartnummer(nummer);
-        System.out.println("kaart_is_geldig?");
-        kaart.setGelding(geldig);
-
-
-    }
+//    public void readKaart(Kaart kaart, double saldo, String nummer, boolean ingechecked, boolean geldig)
+//    {
+//        System.out.println("kaart_saldo?!");
+//        kaart.setSaldo(saldo);
+//        System.out.println("kaart_is_ingecheked?!");
+//        kaart.setIngechecked(ingechecked);
+//        System.out.println("kaart_nummer?");
+//        kaart.setKaartnummer(nummer);
+//        System.out.println("kaart_is_geldig?");
+//        kaart.setGelding(geldig);
+//
+//
+//    }
 
 }
 

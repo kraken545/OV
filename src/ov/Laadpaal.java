@@ -11,4 +11,16 @@ public class Laadpaal
 
     }
 
+    public void showKaart(Kaart kaart)
+    {
+        int kaartNummer = kaart.getNummer();
+        double kaartSaldo = kaart.getSaldo();
+        boolean kaartGeldig = kaart.getGeldig();
+        System.out.println("\nWelcome again!");
+        System.out.println("\nKaart-Nummer: " + kaartNummer);
+        System.out.println("Kaart-Saldo: " + kaartSaldo);
+        System.out.println("Kaart-Geldig: " + kaartGeldig +'\n');
+
+    }
+
 }
